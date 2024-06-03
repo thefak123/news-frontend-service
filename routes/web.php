@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\NewsController;
+use App\Http\Middleware\CheckIfLoggedIn;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('tech-index')->name("home");
-});
+Route::get('/', [NewsController::class, "index"])->name("home");
 
 Route::get('/login', function () {
     return view('login');
@@ -14,6 +14,4 @@ Route::get('/register', function () {
     return view('register');
 })->name("register");
 
-Route::get('/page/{id}', function (string $id) {
-    return view('tech-single');
-})->name("PageDetail");
+Route::get('/news/{id}', [NewsController::class, "getNewsById"])->name("PageDetail");
