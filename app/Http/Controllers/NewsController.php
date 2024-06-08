@@ -17,7 +17,7 @@ class NewsController extends Controller
         try {
             $response = Http::retry(3, 100)  // Retry the request up to 3 times
                             ->timeout(5)     // Set timeout for the request
-                            ->get('http://localhost:9000/news');
+                            ->get('http://localhost:9017/news');
             
             if ($response->successful()) {
                 // Process the successful response
@@ -51,7 +51,7 @@ class NewsController extends Controller
         try {
             $response = Http::retry(3, 100)  // Retry the request up to 3 times
                             ->timeout(5)     // Set timeout for the request
-                            ->get('http://localhost:9000/news/' . $id);
+                            ->get('http://localhost:9017/news/' . $id);
         
             if ($response->successful()) {
                 // Process the successful response

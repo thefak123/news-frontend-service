@@ -21,7 +21,7 @@ class CommentForm extends Component
 
         if($token != null){
             
-            $response = Http::withToken(session("token"))->post('http://localhost:9000/comments', ["message" => $this->message, "newsId" => $this->newsId, "senderId" => null]);
+            $response = Http::withToken(session("token"))->post('http://localhost:9017/comments', ["message" => $this->message, "newsId" => $this->newsId, "senderId" => null]);
             
             if($response->status() == 503){
                 session()->flash('error', 'The comment service is unavailable please try again later');

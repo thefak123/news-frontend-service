@@ -21,7 +21,7 @@ class RegisterForm extends Component
         try {
             $response = Http::retry(3, 100)  // Retry the request up to 3 times
                             ->timeout(5)     // Set timeout for the request
-                            ->post('http://localhost:9000/auth/register', [
+                            ->post('http://localhost:9017/auth/register', [
                                 'fullName' => $this->fullName,
                                 'email' => $this->email,
                                 'password' => $this->password,

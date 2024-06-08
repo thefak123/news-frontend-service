@@ -10,7 +10,7 @@ class CommentList extends Component
 
     public function render()
     {
-        $response = Http::get('http://localhost:9000/comments', [
+        $response = Http::get('http://localhost:9017/comments', [
             "newsid" => $this->newsId
         ]);
 
