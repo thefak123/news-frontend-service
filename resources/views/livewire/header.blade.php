@@ -17,7 +17,14 @@
                 
                             <a class="nav-link" href={{route("login")}}>Login</a>
                         </li>
+                        
                         @endif
+                        @if(session()->has("token"))
+                        <li>
+                
+                            <a class="nav-link" href={{route("dashboard")}}>Dashboard</a>
+                        </li>
+                       @endif
                     </ul>
                     <ul class="navbar-nav mr-2">
                         @if(session()->has("token"))
