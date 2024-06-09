@@ -43,6 +43,8 @@ class NewsController extends Controller
         }
     }
 
+    
+
     public function getNewsById($id){
         // $response = Http::withToken(session("token"))->get('http://localhost:9000/news/' . $id);
     
